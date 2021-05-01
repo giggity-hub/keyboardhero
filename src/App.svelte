@@ -1,15 +1,20 @@
 <script>
+
 import Keyboard from "./Keyboard.svelte";
 import TextDisplay from "./TextDisplay.svelte";
 
-
+let hiddenInput;
+function handleClick(e){
+	console.log("asdf");
+	hiddenInput.focus();
+}
 
 </script>
 
-<main>
 
+<main>
 <div class="container">
-	<TextDisplay/>
+	<TextDisplay on:click={handleClick}/>
 </div>
 <div class="container">
 	<Keyboard/>
@@ -17,6 +22,7 @@ import TextDisplay from "./TextDisplay.svelte";
 
 
 </main>
+<input bind:this={hiddenInput}>
 
 
 

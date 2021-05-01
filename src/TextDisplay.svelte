@@ -36,7 +36,8 @@ function prepareHandler(){
 
 
 
-{#if state === "test"}
+<div on:click>
+	{#if state === "test"}
 
 	{#await testPrepared}
 		<h1>warten schmarten</h1>
@@ -71,6 +72,7 @@ function prepareHandler(){
 
 	<button on:click={prepareHandler} >Neuer Test</button>
 {/if}
+</div>
 
 <!-- 
 	<Keyboard>
