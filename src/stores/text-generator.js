@@ -16,19 +16,18 @@ export async function generateText(minCharCount){
     words = words.split('\n');
     
     const N = words.length;
-    const randomWord = () => words[Math.floor(Math.random() * N)]
+    const randomWord = () => words[Math.floor(Math.random() * N)].replace("\r","")
 
     const res = []
 
     let charCount = 0;
     while (charCount < minCharCount){
         let word = randomWord();
-        let chars = word.split("");
-        //the last char is "" instead of " "
-        chars[chars.length -1] = " "
+        let chars = Array.from(word)
+        //add the space
+        chars.push(" ")
         res.push(chars.map(createCharData)) 
         charCount+= word.length;
     }
-    console.log(res);
     return res;
 }
