@@ -1,0 +1,317 @@
+{
+    "row1": [
+        {
+            "text": "`~",
+            "u": 1.25,
+            "code": "Backquote"
+        },
+        {
+            "text": "1!",
+            "u": 1,
+            "code": "Digit1"
+        },
+        {
+            "text": "2@",
+            "u": 1,
+            "code": "Digit2"
+        },
+        {
+            "text": "3#",
+            "u": 1,
+            "code": "Digit3"
+        },
+        {
+            "text": "4$",
+            "u": 1,
+            "code": "Digit4"
+        },
+        {
+            "text": "5%",
+            "u": 1,
+            "code": "Digit5"
+        },
+        {
+            "text": "6^",
+            "u": 1,
+            "code": "Digit6"
+        },
+        {
+            "text": "7&",
+            "u": 1,
+            "code": "Digit7"
+        },
+        {
+            "text": "8*",
+            "u": 1,
+            "code": "Digit8"
+        },
+        {
+            "text": "9(",
+            "u": 1,
+            "code": "Digit9"
+        },
+        {
+            "text": "0)",
+            "u": 1,
+            "code": "Digit0"
+        },
+        {
+            "text": "-_",
+            "u": 1,
+            "code": "Minus"
+        },
+        {
+            "text": "=+",
+            "u": 1,
+            "code": "Equal"
+        },
+        {
+            "text": "←",
+            "u": 2,
+            "code": "Backspace"
+        }
+    ],
+    "row2": [
+        {
+            "text": "TAB",
+            "u": 1.5,
+            "code": "Tab"
+        },
+        {
+            "text": "Q",
+            "u": 1,
+            "code": "KeyQ"
+        },
+        {
+            "text": "W",
+            "u": 1,
+            "code": "KeyW"
+        },
+        {
+            "text": "E",
+            "u": 1,
+            "code": "KeyE"
+        },
+        {
+            "text": "R",
+            "u": 1,
+            "code": "KeyR"
+        },
+        {
+            "text": "T",
+            "u": 1,
+            "code": "KeyT"
+        },
+        {
+            "text": "Y",
+            "u": 1,
+            "code": "KeyY"
+        },
+        {
+            "text": "U",
+            "u": 1,
+            "code": "KeyU"
+        },
+        {
+            "text": "I",
+            "u": 1,
+            "code": "KeyI"
+        },
+        {
+            "text": "O",
+            "u": 1,
+            "code": "KeyO"
+        },
+        {
+            "text": "P",
+            "u": 1,
+            "code": "KeyP"
+        },
+        {
+            "text": "[{",
+            "u": 1,
+            "code": "BracketLeft"
+        },
+        {
+            "text": "]}",
+            "u": 1,
+            "code": "BracketRight"
+        },
+        {
+            "text": "\\|",
+            "u": 1.5,
+            "code": "Backslash"
+        }
+    ],
+    "row3": [
+        {
+            "text": "CAPS",
+            "u": 1.75,
+            "code": "CapsLock"
+        },
+        {
+            "text": "A",
+            "u": 1,
+            "code": "KeyA"
+        },
+        {
+            "text": "S",
+            "u": 1,
+            "code": "KeyS"
+        },
+        {
+            "text": "D",
+            "u": 1,
+            "code": "KeyD"
+        },
+        {
+            "text": "F",
+            "u": 1,
+            "code": "KeyF"
+        },
+        {
+            "text": "G",
+            "u": 1,
+            "code": "KeyG"
+        },
+        {
+            "text": "H",
+            "u": 1,
+            "code": "KeyH"
+        },
+        {
+            "text": "J",
+            "u": 1,
+            "code": "KeyJ"
+        },
+        {
+            "text": "K",
+            "u": 1,
+            "code": "KeyK"
+        },
+        {
+            "text": "L",
+            "u": 1,
+            "code": "KeyL"
+        },
+        {
+            "text": ";:",
+            "u": 1,
+            "code": "Semicolon"
+        },
+        {
+            "text": "\"'",
+            "u": 1,
+            "code": "Quote"
+        },
+        {
+            "text": "ENTER",
+            "u": 2.25,
+            "code": "Enter"
+        }
+    ],
+    "row4": [
+        {
+            "text": "SHIFT",
+            "u": 2.25,
+            "code": "ShiftLeft"
+        },
+        {
+            "text": "Z",
+            "u": 1,
+            "code": "KeyZ"
+        },
+        {
+            "text": "X",
+            "u": 1,
+            "code": "KeyX"
+        },
+        {
+            "text": "C",
+            "u": 1,
+            "code": "KeyC"
+        },
+        {
+            "text": "V",
+            "u": 1,
+            "code": "KeyV"
+        },
+        {
+            "text": "B",
+            "u": 1,
+            "code": "KeyB"
+        },
+        {
+            "text": "N",
+            "u": 1,
+            "code": "KeyN"
+        },
+        {
+            "text": "M",
+            "u": 1,
+            "code": "KeyM"
+        },
+        {
+            "text": ",<",
+            "u": 1,
+            "code": "Comma"
+        },
+        {
+            "text": ".>",
+            "u": 1,
+            "code": "Period"
+        },
+        {
+            "text": "/?",
+            "u": 1,
+            "code": "Slash"
+        },
+        {
+            "text": "SHIFT",
+            "u": 2.75,
+            "code": "ShiftRight"
+        }
+    ],
+    "row5": [
+        {
+            "text": "CTRL",
+            "u": 1.25,
+            "code": "ControlLeft"
+        },
+        {
+            "text": "Win",
+            "u": 1.25,
+            "code": "MetaLeft"
+        },
+        {
+            "text": "ALT",
+            "u": 1.25,
+            "code": "AltLeft"
+        },
+        {
+            "text": "",
+            "u": 6.25,
+            "code": "Space"
+        },
+        {
+            "text": "ALT",
+            "u": 1.25,
+            "code": "AltRight"
+        },
+        {
+            "text": "FN",
+            "u": 1.25,
+            "code": ""
+        },
+        {
+            "text": "[=]",
+            "u": 1.25,
+            "code": "ContextMenu"
+        },
+        {
+            "text": "CTRL",
+            "u": 1.25,
+            "code": "ControlRight"
+        }
+    ]
+}
