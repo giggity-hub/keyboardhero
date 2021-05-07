@@ -20,10 +20,12 @@
   },
   "dependencies": {
     "howler": "^2.2.1",
+    "is-mobile": "^3.0.0",
     "jquery": "^3.6.0",
     "node-sass": "^5.0.0",
     "sass": "^1.32.10",
     "sirv-cli": "^1.0.0",
+    "svelte-media-query": "^1.0.0",
     "svelte-preprocess": "^4.7.1"
   }
 }

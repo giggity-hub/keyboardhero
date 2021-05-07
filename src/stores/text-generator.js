@@ -1,6 +1,7 @@
-function createCharData(gold){
+function createCharData(gold, pos){
     return {
         gold,
+        pos,
         input: null,
         evaluation: 'clear',
         class: 'clear',
@@ -26,8 +27,13 @@ export async function generateText(minCharCount){
         let chars = Array.from(word)
         //add the space
         chars.push(" ")
-        res.push(chars.map(createCharData)) 
-        charCount+= word.length;
+        res.push(chars.map((char)=>{
+            let data = createCharData(char, charCount);
+            charCount++
+            return data;
+        })) 
+        
     }
+    console.log(res);
     return res;
 }

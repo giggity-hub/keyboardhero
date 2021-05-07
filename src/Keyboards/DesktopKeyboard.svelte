@@ -1,7 +1,9 @@
 <script>
-    import ArcadeButton from './ArcadeButton.svelte';
+    import ArcadeButton from '../ArcadeButton.svelte';
     import keyboardLayout from './keyboardLayout.json'
     import jQuery from 'jquery';
+
+
 
     const rows = Object.values(keyboardLayout)
 
@@ -25,9 +27,9 @@ function stopAnimation(event){
 </script>
 
 
-<svelte:window on:keydown={animate} on:keyup={stopAnimation} />
+<svelte:window on:keydown on:keydown={animate} on:keyup={stopAnimation} />
 
-<div class="keyboard">
+<div  class="keyboard">
     {#each rows as row }
         <div class="row">
             {#each row as key}

@@ -1,38 +1,42 @@
 <script>
 
-export let lines;
-export let currentLine;
+import { tokens } from "./stores/TypingTest";
 
-let lineOffset = 2;
-let lineHeight = 50;
 
-$: marginTop = Math.max(0, currentLine - lineOffset) * -lineHeight + "px"
+const lineHeight = 40; //has to be same as in css
+let caretRef;
+
+$: translateY = calcTranslateY(caretRef?.offsetTop, lineHeight)
+const calcTranslateY = (caretOffsetTop, lineHeight) => {
+    const maxDistanceTop = lineHeight*0
+    return Math.min(maxDistanceTop - caretOffsetTop,0) + "px";
+}
+
+
+
 
 </script>
 
-<div>{currentLine}</div>
+<svelte:window  on:resize={()=> translateY = translateY}/>
+
 
 <div class="text-wrapper">
-    <div class="text" style="margin-top: {marginTop}">
-    {#each lines as line }
-        <div class="line">
-        {#each line as token}
-            <div class="token">
+    <div class="text" style="transform: translateY({translateY})" >
+        {#each $tokens as token}
+            <div class="token" >
             {#each token as char}
-                <div 
-                    class:caret={char.hasCaret}
-                    class={"char " + char.class}>
-                    {char.gold}
-                </div>
+                {#if char.hasCaret}
+                    <div bind:this={caretRef} class={"char caret " + char.class}>{char.gold}</div>
+                {:else}
+                    <div class={"char " + char.class}>{char.gold}</div>
+                {/if}
             {/each}
             </div>
         {/each}
-        </div>
-    {/each}
     </div>
 </div>
 
-
+<!-- style="transform: translateY({-caretRef?.offsetTop}px)" -->
 
 <style lang="scss">
 
@@ -41,14 +45,19 @@ $line-height: 50px;
 .text-wrapper{
     height: $line-height*5;
     overflow: hidden;
+    border: 2px solid grey;
+    width: 900px;
+    max-width: 90%;
 }
 
 .text{
-    transition: margin-top 0.3s;
+    // transition: margin-top 0.3s;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     font-size: 30px;
+    transition: transform cubic-bezier(0.075, 0.82, 0.165, 1) .2s;
 }
+
 
 .line{
     height: $line-height;
@@ -68,6 +77,7 @@ $line-height: 50px;
     margin-right:1px;
     min-width: 15px;
     text-align: center;
+    position: relative;
 
     &.error{background: red}
     &.clear{background: lightblue}
@@ -77,8 +87,15 @@ $line-height: 50px;
 }
 
 .char.caret{
-    background: black;
+    background: grey;
     color: white;
 }
 
+.caret-ref{
+    top:0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: purple;
+}
 </style>
