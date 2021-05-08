@@ -1,10 +1,14 @@
 <script>
 
-import TextDisplay from "./TextDisplay.svelte";
 import MediaQuery from 'svelte-media-query';
 import Keyboard from "./Keyboards/Keyboard.svelte";
 import { deleteChar, deleteWord, enterChar, prepareTypingTest, startTypingTest } from "./stores/TypingTest";
 import TextArea from "./TextArea.svelte";
+import VolumeControls from "./Audio/VolumeControls.svelte";
+import AudioPlayer from "./Audio/AudioPlayer.svelte";
+import Header from "./Header.svelte";
+import DynamicAudioPlayer from './Audio/DynamicAudioPlayer.svelte';
+
 
 
 let testPrepared = prepareTypingTest();
@@ -25,41 +29,48 @@ function prepareHandler(){
 	state = "test"
 }
 
+function test(e){
+	console.log(e);
+}
 </script>
 
-
+<Header/>
 <main>
-<div class="container">
-<div>
+	<aside>
+		<VolumeControls/>
+	</aside>
+	<div class="container">
+	<div>
 	{#if state === "test"}
 
-	{#await testPrepared}
-		<h1>warten schmarten</h1>
-	{:then res} 
+		{#await testPrepared}
+			<h1>warten schmarten</h1>
+		{:then res} 
 
 
-		<TextArea/>
+			<TextArea/>
+			<DynamicAudioPlayer src="./music/music.mp3"/>
 
-	{/await}
+		{/await}
 
-{:else if state === "result"}
-	<div>Yeah boi this da result sksksksk</div>
+	{:else if state === "result"}
+		<div>Yeah boi this da result sksksksk</div>
 
-	<button on:click={prepareHandler} >Neuer Test</button>
-{/if}
-</div>
-</div>
-
-
+		<button on:click={prepareHandler} >Neuer Test</button>
+	{/if}
+	</div>
+	</div>
 
 
-<div class="container">
-	<Keyboard 
-		on:enterChar={({detail})=> enterChar(detail) } 
-		on:deleteChar={deleteChar}
-		on:deleteWord={deleteWord}
-		on:enterChar|once={startHandler}/>
-</div>
+
+
+	<div class="container">
+		<Keyboard 
+			on:enterChar={({detail})=> enterChar(detail) } 
+			on:deleteChar={deleteChar}
+			on:deleteWord={deleteWord}
+			on:enterChar|once={startHandler}/>
+	</div>
 
 </main>
 
@@ -79,23 +90,36 @@ function prepareHandler(){
 :global(body){
 	margin:0;
 	padding: 0;
+	background: brown;
+
+	width: 100vw;
+	height: 100vh;
+
+	display: flex;
+	flex-direction: column;
+}
+
+aside{
+	position: absolute;
+	left: 0;
 }
 
 main {
-	height: 100vh;
-	width: 100%;
-	overflow: hidden;
 	display: flex;
+	width: 100%;
+	flex-grow: 1;
 	flex-direction: column;
-	align-items: center;
+	overflow: hidden;
 	background: green;
-	background-image: url('https://cdn.hipwallpaper.com/i/99/37/c3kd8Z.jpg');
+	// background-image: url('https://cdn.hipwallpaper.com/i/99/37/c3kd8Z.jpg');
 	background-size: cover;
+	padding: 0 50px 0 50px;
 }
 
 .container{
-	height: 50%;
-	width: 100%;
+	// width: 100px;
+	// height: 50%;
+	// width: 100%;
 	background: blue;
 }
 

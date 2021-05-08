@@ -3,10 +3,18 @@
     let hiddenInput;
     let keyboardHasFocus = false;
     const toggleKeyboardFocus = () => keyboardHasFocus = !keyboardHasFocus;
+    let inputValue;
 
+
+    function handleKeydown(e){
+        console.log(e);
+        // inputValue = ""
+    }
 
 </script>
-<input on:input class="hidden" bind:this={hiddenInput} on:blur={toggleKeyboardFocus} on:focus={toggleKeyboardFocus}>
+
+<input on:input={handleKeydown} class="hidden" bind:value={inputValue}  bind:this={hiddenInput} on:blur={toggleKeyboardFocus} on:focus={toggleKeyboardFocus}
+autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
 {#if keyboardHasFocus }
     <!-- svelte-ignore a11y-autofocus -->
     scrrrt scrrtr

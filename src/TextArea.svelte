@@ -7,8 +7,9 @@ const lineHeight = 40; //has to be same as in css
 let caretRef;
 
 $: translateY = calcTranslateY(caretRef?.offsetTop, lineHeight)
-const calcTranslateY = (caretOffsetTop, lineHeight) => {
+const calcTranslateY = (caretOffsetTop=0, lineHeight) => {
     const maxDistanceTop = lineHeight*0
+
     return Math.min(maxDistanceTop - caretOffsetTop,0) + "px";
 }
 

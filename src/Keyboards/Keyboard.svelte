@@ -5,7 +5,7 @@ import { createEventDispatcher } from "svelte";
     import DesktopKeyboard from "./DesktopKeyboard.svelte";
     import MobileKeyboard from "./MobileKeyboard.svelte";
 
-    function isMobile(){return true}
+    function isMobile(){return false}
 
 
     const dispatch = createEventDispatcher();

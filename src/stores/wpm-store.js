@@ -1,7 +1,7 @@
 
-//     import { derived, get, writable } from "svelte/store";
-// import { entries } from "./entries-store";
-// import { timer } from "./Timer";
+import { derived, get, writable } from "svelte/store";
+import { entries } from "./entries-store";
+import { timer } from "./Timer";
 
 
 // function grossWpm(total, seconds){
@@ -28,18 +28,19 @@
 //     initialValue
 // )
 
-// const cps2wpm = (cps) => cps*12
+//chars per seconds => words per minute
+const cps2wpm = (cps) => cps*12
 
-// let arr = []
+let arr = []
 
-// // export const currentWpm = derived(entries, ($entries, set)=>{
-// //     arr.push(Date.now())
-// //     const interval = setInterval(()=>{
-// //         let now = Date.now()
-// //         arr = arr.filter(timeStamp => now - timeStamp < 1000)
+export const currentWpm = derived(entries, ($entries, set)=>{
+    arr.push(Date.now())
+    const interval = setInterval(()=>{
+        let now = Date.now()
+        arr = arr.filter(timeStamp => now - timeStamp < 1000)
 
-// //         set(cps2wpm(arr.length))
-// //     }, 10)
-// // }, 0)
+        set(cps2wpm(arr.length))
+    }, 10)
+}, 0)
 
 // export const currentWpm = writable(10)
